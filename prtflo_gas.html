@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Apps Script ポートフォリオ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Google Apps Script（GAS）ポートフォリオ</h1>
+    <nav>
+      <a href="index.html">トップへ戻る</a>
+    </nav>
+  </header>
+  <main>
+    <section class="gas-hero">
+      <img src="images/gas/gas_portfolio_main.png" alt="GASカレンダー連携イメージ">
+      <div>
+        <h2>Googleカレンダー × スプレッドシート連携ツール</h2>
+        <p>
+          Google Apps Script（GAS）で、Googleカレンダーとスプレッドシートを<strong>双方向連携</strong>する業務効率化ツールを開発。<br>
+          <span class="gas-highlight">実務現場で即戦力となる自動化・一括管理</span>を実現します。
+        </p>
+      </div>
+    </section>
+    <section class="gas-section">
+      <h3>活用イメージ</h3>
+      <img src="images/gas/gas_feature.jpg " alt="GAS活用イメージ">
+      <ul>
+        <li>家族・チームの予定管理を一括で効率化</li>
+        <li>社内の複数カレンダーを一元管理・編集</li>
+        <li>イベントの一括修正や履歴管理</li>
+      </ul>
+    </section>
+    <section class="gas-section">
+      <h3>主な特徴</h3>
+      <ul>
+        <li>複数カレンダーの予定を一括でスプレッドシートにエクスポート</li>
+        <li>シート上で編集・一括管理し、必要な予定のみカレンダーへ反映</li>
+        <li>終日イベント・通常イベントの区別や、イベントIDによる安全な更新</li>
+        <li>「変更選択」列で柔軟な反映コントロール</li>
+        <li>カレンダーIDと日本語名のマッピングで分かりやすい運用</li>
+      </ul>
+    </section>
+    <section class="gas-section">
+      <h3>コード例</h3>
+      <div class="code-block">
+<pre><code>// カレンダーからシートへエクスポート
+function CalendarToSheet() {
+  // ...（略）...
+  sheet.appendRow(['日付', '件名', '説明', 'カレンダー名', '色', '終日', '変更選択', 'イベントID']);
+  // ...（略）...
+  events.forEach(function(event) {
+    sheet.appendRow([
+      Utilities.formatDate(event.getStartTime(), Session.getScriptTimeZone(), 'yyyy/MM/dd'),
+      event.getTitle(),
+      event.getDescription(),
+      calendarTitleMap[calendarId],
+      calendar.getColor(),
+      event.isAllDayEvent() ? '終日' : '-',
+      '',
+      event.getId()
+    ]);
+  });
+}
+
+// シートからカレンダーへインポート
+function SheetToCalendar() {
+  // ...（略）...
+  if (isAllDay === '終日') {
+    event.setAllDayDate(newDate);
+  } else {
+    event.setTime(newDate, newDate);
+  }
+}
+</code></pre>
+      </div>
+    </section>
+    <section class="gas-section">
+      <h3>工夫・アピールポイント</h3>
+      <ul>
+        <li>GASの標準APIを活用し、<strong>安全かつ効率的なデータ同期</strong>を実現</li>
+        <li>終日イベント・通常イベントの自動判別と正確な反映</li>
+        <li>ユーザーがシート上で「変更選択」できる柔軟な運用設計</li>
+        <li>カレンダーIDと日本語名のマッピングで、現場でも分かりやすいUI</li>
+        <li>実務現場での運用を想定した堅牢なエラーハンドリング</li>
+      </ul>
+    </section>
+    <section class="gas-section">
+      <h3>スキルセット</h3>
+      <ul>
+        <li>Google Apps Script（GAS）による業務自動化</li>
+        <li>GoogleカレンダーAPI・スプレッドシートAPI活用</li>
+        <li>JavaScriptによる堅牢なロジック設計</li>
+        <li>ユーザー目線のUI設計・運用設計</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Hidenori Portfolio</p>
+  </footer>
+</body>
+</html> 
