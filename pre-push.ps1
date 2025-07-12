@@ -17,7 +17,8 @@ if (-Not (Test-Path $gitignorePath)) {
 $patterns = Get-Content $gitignorePath | Where-Object { $_ -and -not ($_.Trim().StartsWith("#")) }
 
 # push対象のファイル一覧を取得
-$pushFiles = git diff --cached --name-only
+## $pushFiles = git diff --cached --name-only
+$pushFiles = git diff --name-only origin/main...HEAD
 
 Write-Host "push対象ファイル一覧:"
 $pushFiles | ForEach-Object { Write-Host $_ }
