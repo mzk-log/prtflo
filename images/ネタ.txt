@@ -1,0 +1,22 @@
+ポートフォリオサイトの作成をしたいと考えています。 以下のテーマに合ったイメージ画像を作成してください。
+#テーマ：PowerBI Desktop
+
+＃条件 
+・生成する画像は1枚 
+・画像サイズは、縦240px　x　横360px
+
+
+#テーマ1：UWSC
+#テーマ2：エクセルVBA
+#テーマ3：PowerBI Desktop
+#テーマ4：PowerApps
+#テーマ5：PowerAutomate
+#テーマ6：GAS
+#テーマ6：AutoHotkey
+#テーマ7：LINE x Googleカレンダー
+#テーマ8：Lancers x GMail x GiHub x Node.js
+#テーマ9：GASでChatGPT OPENAI_API活用
+
+
+
+
