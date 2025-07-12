@@ -6,6 +6,10 @@ Write-Host "=== pre-push.ps1: スクリプトが実行されました ==="
 $repoRoot = git rev-parse --show-toplevel
 $gitignorePath = Join-Path $repoRoot "gitignore.txt"
 
+Write-Host "=== pre-push.ps1:repoRootです ===> $repoRoot"
+Write-Host "=== pre-push.ps1:gitignorePathです ===> $gitignorePath"
+
+
 if (-Not (Test-Path $gitignorePath)) {
     exit 0
 }
