@@ -1,0 +1,3 @@
+images/gas/.create/
+*.txt
+*.pdn
