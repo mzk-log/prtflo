@@ -1,4 +1,4 @@
-images/gas/.create/
+images/**/.create/
 *.ps1
 *.txt
 *.pdn
